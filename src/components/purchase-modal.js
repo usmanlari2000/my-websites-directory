@@ -400,7 +400,7 @@ export default function PurchaseModal() {
           }}
         >
           <button
-            className="flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
+            className="cursor-pointer flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
             onClick={() => setPurchaseModalOpen(false)}
           >
             Close
@@ -549,7 +549,7 @@ export default function PurchaseModal() {
             </button>
           </div>
         </div>
-        <div className="border-[#ebebeb] bg-[#fafafa] p-6 border-t">
+        <div className="border-[#ebebeb] p-6 bg-[#fafafa] border-t">
           <label htmlFor="fullName">Full name</label>
           <input
             className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
@@ -590,7 +590,7 @@ export default function PurchaseModal() {
           </div>
           <label htmlFor="emailAddress">Email address</label>
           <input
-            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+            className={`bg-white block mt-2 px-3 rounded-md h-10 w-full text-[#171717] focus:outline-0 ${
               error.emailAddress
                 ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
                 : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
