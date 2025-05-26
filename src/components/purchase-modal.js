@@ -731,7 +731,7 @@ export default function PurchaseModal() {
           <p className="text-white font-medium">
             Thank You! You'll receive your data soon.
           </p>
-          <button className="cursor-pointer h-full w-8 flex justify-center items-center">
+          <button className="cursor-pointer h-full w-8 flex justify-center items-center rounded-md hover:bg-[#005bc4]">
             <svg
               height="16"
               strokeLinejoin="round"

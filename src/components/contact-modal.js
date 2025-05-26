@@ -500,8 +500,10 @@ export default function ContactModal() {
       `}
       >
         <div className="h-8 flex items-center justify-between">
-          <p className="text-white font-medium">Your message has been sent successfully.</p>
-          <button className="cursor-pointer h-full w-8 flex justify-center items-center">
+          <p className="text-white font-medium">
+            Your message has been sent successfully.
+          </p>
+          <button className="cursor-pointer h-full w-8 flex justify-center items-center rounded-md hover:bg-[#005bc4]">
             <svg
               height="16"
               strokeLinejoin="round"
