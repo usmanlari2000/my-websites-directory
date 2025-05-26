@@ -15,16 +15,16 @@ export default function ProvidersDirectoryFallback() {
               Hosting Providers Directory
             </h1>
             <time
-              dateTime={today.toISOString().split("T")[0]}
               className="lg:inline hidden text-[#171717]"
+              dateTime={today.toISOString().split("T")[0]}
             >
               {formattedDate}
             </time>
           </div>
           <div className="bg-[linear-gradient(270deg,_#fafafa,_#eaeaea,_#eaeaea,_#fafafa)] bg-[length:400%_100%] mb-4 lg:mb-0 rounded-md w-full h-5 animate-skeleton"></div>
           <time
-            dateTime={today.toISOString().split("T")[0]}
             className="inline lg:hidden text-[#171717]"
+            dateTime={today.toISOString().split("T")[0]}
           >
             {formattedDate}
           </time>
@@ -39,13 +39,13 @@ export default function ProvidersDirectoryFallback() {
                   <th className="px-4 h-10 text-left">
                     <div className="flex items-center gap-x-2">
                       <span className="font-medium">Hosting Providers</span>
-                      <button>
+                      <button className="cursor-pointer">
                         <svg
+                          className="w-4 h-2"
                           height="16"
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
                           width="16"
-                          className="w-4 h-2"
                         >
                           <path
                             fillRule="evenodd"
@@ -55,11 +55,11 @@ export default function ProvidersDirectoryFallback() {
                           ></path>
                         </svg>
                         <svg
+                          className="opacity-50 w-4 h-2"
                           height="16"
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
                           width="16"
-                          className="opacity-50 w-4 h-2"
                         >
                           <path
                             fillRule="evenodd"
@@ -74,13 +74,13 @@ export default function ProvidersDirectoryFallback() {
                   <th className="px-4 h-10 text-left">
                     <div className="flex items-center gap-x-2">
                       <span className="font-medium">Known IPs Count</span>
-                      <button>
+                      <button className="cursor-pointer">
                         <svg
+                          className="opacity-50 w-4 h-2"
                           height="16"
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
                           width="16"
-                          className="opacity-50 w-4 h-2"
                         >
                           <path
                             fillRule="evenodd"
@@ -90,11 +90,11 @@ export default function ProvidersDirectoryFallback() {
                           ></path>
                         </svg>
                         <svg
+                          className="opacity-50 w-4 h-2"
                           height="16"
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
                           width="16"
-                          className="opacity-50 w-4 h-2"
                         >
                           <path
                             fillRule="evenodd"
@@ -109,13 +109,13 @@ export default function ProvidersDirectoryFallback() {
                   <th className="px-4 h-10 text-left">
                     <div className="flex items-center gap-x-2">
                       <span className="font-medium">Known Websites Count</span>
-                      <button>
+                      <button className="cursor-pointer">
                         <svg
+                          className="opacity-50 w-4 h-2"
                           height="16"
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
                           width="16"
-                          className="opacity-50 w-4 h-2"
                         >
                           <path
                             fillRule="evenodd"
@@ -125,11 +125,11 @@ export default function ProvidersDirectoryFallback() {
                           ></path>
                         </svg>
                         <svg
+                          className="opacity-50 w-4 h-2"
                           height="16"
                           strokeLinejoin="round"
                           viewBox="0 0 16 16"
                           width="16"
-                          className="opacity-50 w-4 h-2"
                         >
                           <path
                             fillRule="evenodd"
@@ -145,7 +145,7 @@ export default function ProvidersDirectoryFallback() {
               </thead>
               <tbody className="bg-white">
                 {Array.from({ length: 50 }).map((_, index) => (
-                  <tr key={index} className="border-[#ebebeb] border-t">
+                  <tr className="border-[#ebebeb] border-t" key={index}>
                     <td className="px-4 h-10 text-left">
                       <div className="flex items-center">
                         <div className="bg-[linear-gradient(270deg,_#fafafa,_#eaeaea,_#eaeaea,_#fafafa)] bg-[length:400%_100%] rounded-md w-28 h-5 animate-skeleton"></div>
@@ -170,15 +170,15 @@ export default function ProvidersDirectoryFallback() {
             <div className="bg-[linear-gradient(270deg,_#fafafa,_#eaeaea,_#eaeaea,_#fafafa)] bg-[length:400%_100%] rounded-md w-20 h-4 animate-skeleton"></div>
             <div className="flex gap-x-2">
               <button
+                className="cursor-pointer flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6"
                 disabled={false}
-                className="flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6"
               >
                 <svg
+                  className="h-2.5 text-[#8f8f8f]"
                   height="16"
                   strokeLinejoin="round"
                   viewBox="0 0 16 16"
                   width="16"
-                  className="h-2.5 text-[#8f8f8f]"
                 >
                   <path
                     fillRule="evenodd"
@@ -189,15 +189,15 @@ export default function ProvidersDirectoryFallback() {
                 </svg>
               </button>
               <button
+                className="cursor-pointer flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6"
                 disabled={false}
-                className="flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6"
               >
                 <svg
+                  className="h-2.5 text-[#8f8f8f]"
                   height="16"
                   strokeLinejoin="round"
                   viewBox="0 0 16 16"
                   width="16"
-                  className="h-2.5 text-[#8f8f8f]"
                 >
                   <path
                     fillRule="evenodd"
@@ -214,4 +214,3 @@ export default function ProvidersDirectoryFallback() {
     </main>
   );
 }
-

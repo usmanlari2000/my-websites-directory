@@ -21,46 +21,46 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-x-4">
             <Link
+              className="flex font-medium h-10 items-center text-[#171717]"
               href="/"
               onClick={() => setMenuOpen(false)}
-              className="flex font-medium h-10 items-center text-[#171717]"
             >
               MyWebsitesDirectory
             </Link>
             <Link
-              href="/providers"
               className={`duration-200 h-10 hidden items-center lg:flex transition-colors ${
                 pathname === "/providers"
                   ? "text-[#171717]"
                   : "hover:text-[#171717]"
               }`}
+              href="/providers"
             >
               Hosting Providers
             </Link>
           </div>
           <div className="flex items-center gap-x-4">
             <button
+              className="cursor-pointer duration-200 h-10 hidden hover:text-[#171717] lg:inline transition-colors"
               onClick={() => {
                 setContactModalOpen(true);
                 setMenuOpen(false);
               }}
-              className="duration-200 h-10 hidden hover:text-[#171717] lg:inline transition-colors"
             >
               Contact Us
             </button>
             <button
+              className="cursor-pointer bg-[#171717] duration-200 font-medium h-10 hidden hover:bg-[#383838] items-center lg:flex px-4 rounded-md shadow-[0px_0px_0px_1px_#00000000] text-white transition-colors"
               onClick={() => {
                 setPurchaseModalOpen(true);
                 setMenuOpen(false);
               }}
-              className="bg-[#171717] duration-200 font-medium h-10 hidden hover:bg-[#383838] items-center lg:flex px-4 rounded-md shadow-[0px_0px_0px_1px_#00000000] text-white transition-colors"
             >
               Purchase Data
             </button>
           </div>
           <button
+            className="cursor-pointer border border-[#00000014] flex flex-col h-8 items-center justify-center lg:hidden rounded-full w-8"
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="border border-[#00000014] flex flex-col h-8 items-center justify-center lg:hidden rounded-full w-8"
           >
             <div
               className={`bg-[#666] duration-200 h-[1.5px] transition-transform w-[14px] ${
@@ -84,32 +84,32 @@ export default function Header() {
           }`}
         >
           <button
+            className="cursor-pointer bg-[#171717] duration-200 flex h-10 hover:bg-[#383838] items-center justify-center px-4 rounded-md shadow-[0px_0px_0px_1px_#00000000] text-white font-medium transition-colors"
             onClick={() => {
               setPurchaseModalOpen(true);
               setMenuOpen(false);
             }}
-            className="bg-[#171717] duration-200 flex h-10 hover:bg-[#383838] items-center justify-center px-4 rounded-md shadow-[0px_0px_0px_1px_#00000000] text-white font-medium transition-colors"
           >
             Purchase Data
           </button>
           <div>
             <Link
-              href="/providers"
-              onClick={() => setMenuOpen(false)}
               className={`duration-200 flex h-10 items-center transition-colors w-fit ${
                 pathname === "/providers"
                   ? "text-[#171717]"
                   : "hover:text-[#171717]"
               }`}
+              href="/providers"
+              onClick={() => setMenuOpen(false)}
             >
               Hosting Providers
             </Link>
             <button
+              className="cursor-pointer duration-200 flex h-10 hover:text-[#171717] items-center transition-colors"
               onClick={() => {
                 setContactModalOpen(true);
                 setMenuOpen(false);
               }}
-              className="duration-200 flex h-10 hover:text-[#171717] items-center transition-colors"
             >
               Contact Us
             </button>

@@ -15,16 +15,16 @@ export default function MainDirectoryFallback() {
               Global Websites Directory
             </h1>
             <time
-              dateTime={today.toISOString().split("T")[0]}
               className="lg:inline hidden text-[#171717]"
+              dateTime={today.toISOString().split("T")[0]}
             >
               {formattedDate}
             </time>
           </div>
           <div className="bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] bg-[length:400%_100%] mb-4 lg:mb-0 rounded-md w-full h-5 animate-skeleton"></div>
           <time
-            dateTime={today.toISOString().split("T")[0]}
             className="inline lg:hidden text-[#171717]"
+            dateTime={today.toISOString().split("T")[0]}
           >
             {formattedDate}
           </time>
@@ -32,16 +32,16 @@ export default function MainDirectoryFallback() {
       </div>
       <div className="mx-auto px-4 py-6 max-w-screen-lg">
         <div className="sm:relative">
-          <button className="flex justify-between items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md w-full h-10 text-[#171717] transition-colors duration-200">
+          <button className="cursor-pointer flex justify-between items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md w-full h-10 text-[#171717] transition-colors duration-200">
             <span className="font-medium text-left">
               Select Hosting Providers
             </span>
             <svg
+              className="relative top-px"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="relative top-px"
             >
               <path
                 fillRule="evenodd"
@@ -61,13 +61,13 @@ export default function MainDirectoryFallback() {
                     <th className="px-4 h-10 text-left">
                       <div className="flex items-center gap-x-2">
                         <span className="font-medium">Domain Name</span>
-                        <button>
+                        <button className="cursor-pointer">
                           <svg
+                            className="opacity-50 w-4 h-2"
                             height="16"
                             strokeLinejoin="round"
                             viewBox="0 0 16 16"
                             width="16"
-                            className="opacity-50 w-4 h-2"
                           >
                             <path
                               fillRule="evenodd"
@@ -77,11 +77,11 @@ export default function MainDirectoryFallback() {
                             ></path>
                           </svg>
                           <svg
+                            className="opacity-50 w-4 h-2"
                             height="16"
                             strokeLinejoin="round"
                             viewBox="0 0 16 16"
                             width="16"
-                            className="opacity-50 w-4 h-2"
                           >
                             <path
                               fillRule="evenodd"
@@ -96,13 +96,13 @@ export default function MainDirectoryFallback() {
                     <th className="px-4 h-10 text-left">
                       <div className="flex items-center gap-x-2">
                         <span className="font-medium">IP Address</span>
-                        <button>
+                        <button className="cursor-pointer">
                           <svg
+                            className="opacity-50 w-4 h-2"
                             height="16"
                             strokeLinejoin="round"
                             viewBox="0 0 16 16"
                             width="16"
-                            className="opacity-50 w-4 h-2"
                           >
                             <path
                               fillRule="evenodd"
@@ -112,11 +112,11 @@ export default function MainDirectoryFallback() {
                             ></path>
                           </svg>
                           <svg
+                            className="opacity-50 w-4 h-2"
                             height="16"
                             strokeLinejoin="round"
                             viewBox="0 0 16 16"
                             width="16"
-                            className="opacity-50 w-4 h-2"
                           >
                             <path
                               fillRule="evenodd"
@@ -131,13 +131,13 @@ export default function MainDirectoryFallback() {
                     <th className="px-4 h-10 text-left">
                       <div className="flex items-center gap-x-2">
                         <span className="font-medium">Hosting Provider</span>
-                        <button>
+                        <button className="cursor-pointer">
                           <svg
+                            className="opacity-50 w-4 h-2"
                             height="16"
                             strokeLinejoin="round"
                             viewBox="0 0 16 16"
                             width="16"
-                            className="opacity-50 w-4 h-2"
                           >
                             <path
                               fillRule="evenodd"
@@ -147,11 +147,11 @@ export default function MainDirectoryFallback() {
                             ></path>
                           </svg>
                           <svg
+                            className="opacity-50 w-4 h-2"
                             height="16"
                             strokeLinejoin="round"
                             viewBox="0 0 16 16"
                             width="16"
-                            className="opacity-50 w-4 h-2"
                           >
                             <path
                               fillRule="evenodd"
@@ -166,13 +166,13 @@ export default function MainDirectoryFallback() {
                     <th className="px-4 h-10 text-left">
                       <div className="flex items-center gap-x-2">
                         <span className="font-medium">Global Ranking</span>
-                        <button>
+                        <button className="cursor-pointer">
                           <svg
+                            className="w-4 h-2"
                             height="16"
                             strokeLinejoin="round"
                             viewBox="0 0 16 16"
                             width="16"
-                            className="w-4 h-2"
                           >
                             <path
                               fillRule="evenodd"
@@ -182,11 +182,11 @@ export default function MainDirectoryFallback() {
                             ></path>
                           </svg>
                           <svg
+                            className="opacity-50 w-4 h-2"
                             height="16"
                             strokeLinejoin="round"
                             viewBox="0 0 16 16"
                             width="16"
-                            className="opacity-50 w-4 h-2"
                           >
                             <path
                               fillRule="evenodd"
@@ -202,7 +202,7 @@ export default function MainDirectoryFallback() {
                 </thead>
                 <tbody className="bg-white">
                   {Array.from({ length: 50 }).map((_, index) => (
-                    <tr key={index} className="border-[#ebebeb] border-t">
+                    <tr className="border-[#ebebeb] border-t" key={index}>
                       <td className="px-4 h-10 text-left">
                         <div className="flex items-center">
                           <div className="bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] bg-[length:400%_100%] rounded-md w-28 h-5 animate-skeleton"></div>
@@ -232,15 +232,15 @@ export default function MainDirectoryFallback() {
               <div className="bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] bg-[length:400%_100%] rounded-md w-20 h-4 animate-skeleton"></div>
               <div className="flex gap-x-2">
                 <button
+                  className="cursor-pointer flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6"
                   disabled={false}
-                  className="flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6"
                 >
                   <svg
+                    className="h-2.5 text-[#8f8f8f]"
                     height="16"
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
                     width="16"
-                    className="h-2.5 text-[#8f8f8f]"
                   >
                     <path
                       fillRule="evenodd"
@@ -251,15 +251,15 @@ export default function MainDirectoryFallback() {
                   </svg>
                 </button>
                 <button
+                  className="cursor-pointer flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6"
                   disabled={false}
-                  className="flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6"
                 >
                   <svg
+                    className="h-2.5 text-[#8f8f8f]"
                     height="16"
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
                     width="16"
-                    className="h-2.5 text-[#8f8f8f]"
                   >
                     <path
                       fillRule="evenodd"
@@ -277,4 +277,3 @@ export default function MainDirectoryFallback() {
     </main>
   );
 }
-

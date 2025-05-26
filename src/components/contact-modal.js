@@ -125,16 +125,16 @@ export default function ContactModal() {
   return (
     <>
       <div
-        onClick={() => setContactModalOpen(false)}
         className={`top-0 z-30 fixed bg-[#0006] sm:bg-white w-full h-full transition-opacity duration-200 ${
           contactModalOpen ? "sm:opacity-80" : "opacity-0 pointer-events-none"
         }`}
+        onClick={() => setContactModalOpen(false)}
       ></div>
       <div
-        ref={desktopModalRef}
         className={`sm:block top-1/2 left-1/2 z-40 fixed hidden bg-white shadow-[0px_0px_0px_1px_#00000014,0px_1px_1px_0px_#00000005,0px_4px_8px_-4px_#0000000a,0px_16px_24px_-8px_#0000000f] rounded-xl w-[500px] h-fit max-h-[min(520px,75%)] transition-[opacity,transform] -translate-x-1/2 -translate-y-1/2 duration-200 overflow-auto ${
           contactModalOpen ? "" : "opacity-0 pointer-events-none scale-90"
         }`}
+        ref={desktopModalRef}
       >
         <div className="p-6">
           <h2 className="mb-6 font-semibold text-[#171717] text-2xl">
@@ -147,6 +147,11 @@ export default function ContactModal() {
         <div className="bg-[#fafafa] p-6 border-[#ebebeb] border-t">
           <label htmlFor="fullName">Full name</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.fullName
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
+            }`}
             type="text"
             id="fullName"
             name="fullName"
@@ -154,11 +159,6 @@ export default function ContactModal() {
             placeholder="John Doe"
             autoComplete="off"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.fullName
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
-            }`}
           />
           <div
             className={`mb-6 ${
@@ -166,11 +166,11 @@ export default function ContactModal() {
             }`}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -185,6 +185,11 @@ export default function ContactModal() {
           </div>
           <label htmlFor="emailAddress">Email address</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.emailAddress
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
+            }`}
             type="text"
             id="emailAddress"
             name="emailAddress"
@@ -192,11 +197,6 @@ export default function ContactModal() {
             placeholder="johndoe@outlook.com"
             autoComplete="off"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.emailAddress
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
-            }`}
           />
           <div
             className={`mb-6 ${
@@ -204,11 +204,11 @@ export default function ContactModal() {
             }`}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -225,27 +225,27 @@ export default function ContactModal() {
           </div>
           <label htmlFor="message">Message</label>
           <textarea
+            className={`bg-white block mt-2 px-3 py-2.5 rounded-md w-full text-[#171717] focus:outline-0 resize-none ${
+              error.message
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029]"
+            }`}
             id="message"
             name="message"
             value={data.message}
             placeholder="Hey, I wanted to ask about..."
             rows={6}
             onChange={handleChange}
-            className={`block mt-2 px-3 py-2.5 rounded-md w-full text-[#171717] focus:outline-0 resize-none ${
-              error.message
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029]"
-            }`}
           ></textarea>
           <div
             className={error.message ? "flex items-center gap-x-2" : "hidden"}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -260,6 +260,7 @@ export default function ContactModal() {
           </div>
         </div>
         <div
+          className="bottom-0 sticky flex justify-between p-4 border-[#ebebeb] border-t"
           style={{
             backgroundColor: `hsl(0, 0%, ${100 - scrollPercent / 50}%)`,
             boxShadow: `rgba(0, 0, 0, ${Math.max(
@@ -267,22 +268,21 @@ export default function ContactModal() {
               0
             )}) 0px 4px 8px 0px`,
           }}
-          className="bottom-0 sticky flex justify-between p-4 border-[#ebebeb] border-t"
         >
           <button
+            className="cursor-pointer flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
             onClick={() => setContactModalOpen(false)}
-            className="flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
           >
             Close
           </button>
           <button
-            disabled={submitting}
-            onClick={handleSubmit}
             className={`flex items-center gap-x-2 px-4 rounded-md h-10 font-medium transition-[background-color,color,box-shadow] duration-200 ${
               submitting
                 ? "bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] text-[#8f8f8f] cursor-not-allowed"
-                : "bg-[#171717] hover:bg-[#383838] shadow-[0px_0px_0px_1px_#00000000] text-white"
+                : "bg-[#171717] hover:bg-[#383838] shadow-[0px_0px_0px_1px_#00000000] text-white cursor-pointer"
             }`}
+            disabled={submitting}
+            onClick={handleSubmit}
           >
             <div
               className={`relative top-2 left-2 w-4 h-4 ${
@@ -295,12 +295,12 @@ export default function ContactModal() {
 
                 return (
                   <div
+                    className="top-[-3.9%] left-[-10%] absolute bg-[#666] rounded-md w-[24%] h-[8%] animate-spinner"
                     key={index}
                     style={{
                       animationDelay: `${delay}ms`,
                       transform: `rotate(${angle}deg) translateX(146%)`,
                     }}
-                    className="top-[-3.9%] left-[-10%] absolute bg-[#666] rounded-md w-[24%] h-[8%] animate-spinner"
                   ></div>
                 );
               })}
@@ -310,10 +310,10 @@ export default function ContactModal() {
         </div>
       </div>
       <div
-        ref={mobileModalRef}
         className={`-bottom-px z-40 fixed sm:hidden bg-white shadow-[0px_0px_0px_1px_#00000014,0px_1px_1px_0px_#00000005,0px_4px_8px_-4px_#0000000a,0px_16px_24px_-8px_#0000000f] rounded-t-lg w-full h-fit max-h-[min(520px,75%)] transition-transform duration-200 overflow-auto ${
           contactModalOpen ? "" : "translate-y-full"
         }`}
+        ref={mobileModalRef}
       >
         <div className="p-6">
           <h2 className="mb-6 font-semibold text-[#171717] text-2xl">
@@ -326,6 +326,11 @@ export default function ContactModal() {
         <div className="bg-[#fafafa] p-6 border-[#ebebeb] border-t">
           <label htmlFor="fullName">Full name</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.fullName
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
+            }`}
             type="text"
             id="fullName"
             name="fullName"
@@ -333,11 +338,6 @@ export default function ContactModal() {
             placeholder="John Doe"
             autoComplete="off"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.fullName
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
-            }`}
           />
           <div
             className={`mb-6 ${
@@ -345,11 +345,11 @@ export default function ContactModal() {
             }`}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -364,6 +364,11 @@ export default function ContactModal() {
           </div>
           <label htmlFor="emailAddress">Email address</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.emailAddress
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
+            }`}
             type="text"
             id="emailAddress"
             name="emailAddress"
@@ -371,11 +376,6 @@ export default function ContactModal() {
             placeholder="johndoe@outlook.com"
             autoComplete="off"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.emailAddress
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
-            }`}
           />
           <div
             className={`mb-6 ${
@@ -383,11 +383,11 @@ export default function ContactModal() {
             }`}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -404,27 +404,27 @@ export default function ContactModal() {
           </div>
           <label htmlFor="message">Message</label>
           <textarea
+            className={`bg-white block mt-2 px-3 py-2.5 rounded-md w-full text-[#171717] focus:outline-0 resize-none ${
+              error.message
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029]"
+            }`}
             id="message"
             name="message"
             value={data.message}
             placeholder="Hey, I wanted to ask about..."
             rows={6}
             onChange={handleChange}
-            className={`block mt-2 px-3 py-2.5 rounded-md w-full text-[#171717] focus:outline-0 resize-none ${
-              error.message
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029]"
-            }`}
           ></textarea>
           <div
             className={error.message ? "flex items-center gap-x-2" : "hidden"}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -439,6 +439,7 @@ export default function ContactModal() {
           </div>
         </div>
         <div
+          className="bottom-0 sticky flex justify-between border-[#ebebeb] p-4 border-t"
           style={{
             backgroundColor: `hsl(0, 0%, ${100 - scrollPercent / 50}%)`,
             boxShadow: `rgba(0, 0, 0, ${Math.max(
@@ -446,22 +447,21 @@ export default function ContactModal() {
               0
             )}) 0px 4px 8px 0px`,
           }}
-          className="bottom-0 sticky flex justify-between border-[#ebebeb] p-4 border-t"
         >
           <button
+            className="cursor-pointer flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
             onClick={() => setContactModalOpen(false)}
-            className="flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
           >
             Close
           </button>
           <button
-            disabled={submitting}
-            onClick={handleSubmit}
-            className={`flex items-center gap-x-2 px-4 rounded-md h-10 font-medium transition-[background-color,color,box-shadow] duration-200 ${
+            className={`cursor-pointer flex items-center gap-x-2 px-4 rounded-md h-10 font-medium transition-[background-color,color,box-shadow] duration-200 ${
               submitting
                 ? "bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] text-[#8f8f8f] cursor-not-allowed"
-                : "bg-[#171717] hover:bg-[#383838] shadow-[0px_0px_0px_1px_#00000000] text-white"
+                : "bg-[#171717] hover:bg-[#383838] shadow-[0px_0px_0px_1px_#00000000] text-white cursor-pointer"
             }`}
+            disabled={submitting}
+            onClick={handleSubmit}
           >
             <div
               className={`relative top-2 left-2 w-4 h-4 ${
@@ -474,12 +474,12 @@ export default function ContactModal() {
 
                 return (
                   <div
+                    className="top-[-3.9%] left-[-10%] absolute bg-[#666] rounded-md w-[24%] h-[8%] animate-spinner"
                     key={index}
                     style={{
                       animationDelay: `${delay}ms`,
                       transform: `rotate(${angle}deg) translateX(146%)`,
                     }}
-                    className="top-[-3.9%] left-[-10%] absolute bg-[#666] rounded-md w-[24%] h-[8%] animate-spinner"
                   ></div>
                 );
               })}
@@ -503,13 +503,13 @@ export default function ContactModal() {
           <p className="text-white font-medium">
             Your message has been sent successfully.
           </p>
-          <button className="cursor-pointer h-full w-8 flex justify-center items-center rounded-md hover:bg-[#005bc4]">
+          <button className="cursor-pointer h-full w-8 flex justify-center items-center rounded-md hover:bg-[#0067dc] transition-colors duration-200">
             <svg
+              className="text-white"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-white"
               onClick={() => setContactToastVisible(false)}
             >
               <path

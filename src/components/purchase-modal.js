@@ -159,16 +159,16 @@ export default function PurchaseModal() {
   return (
     <>
       <div
-        onClick={() => setPurchaseModalOpen(false)}
         className={`top-0 z-30 fixed bg-[#0006] sm:bg-white w-full h-full transition-opacity duration-200 ${
           purchaseModalOpen ? "sm:opacity-80" : "opacity-0 pointer-events-none"
         }`}
+        onClick={() => setPurchaseModalOpen(false)}
       ></div>
       <div
-        ref={desktopModalRef}
         className={`sm:block top-1/2 left-1/2 z-40 fixed hidden bg-white shadow-[0px_0px_0px_1px_#00000014,0px_1px_1px_0px_#00000005,0px_4px_8px_-4px_#0000000a,0px_16px_24px_-8px_#0000000f] rounded-xl w-[500px] h-fit max-h-[min(520px,75%)] transition-[opacity,transform] -translate-x-1/2 -translate-y-1/2 duration-200 overflow-auto ${
           purchaseModalOpen ? "" : "opacity-0 pointer-events-none scale-90"
         }`}
+        ref={desktopModalRef}
       >
         <div className="p-6">
           <h2 className="mb-6 font-semibold text-[#171717] text-2xl">
@@ -191,17 +191,17 @@ export default function PurchaseModal() {
               0xa1272120050a09814f93962ce3bfd20bf2653965
             </pre>
             <button
+              className="cursor-pointer relative flex items-center px-3 h-full"
               onClick={handleUSDTCopy}
-              className="relative flex items-center px-3 h-full"
             >
               <svg
+                className={`transition-[opacity,transform] duration-200 ${
+                  USDTCopied ? "" : "opacity-0 scale-50"
+                }`}
                 height="16"
                 strokeLinejoin="round"
                 viewBox="0 0 16 16"
                 width="16"
-                className={`transition-[opacity,transform] duration-200 ${
-                  USDTCopied ? "" : "opacity-0 scale-50"
-                }`}
               >
                 <path
                   fillRule="evenodd"
@@ -211,13 +211,13 @@ export default function PurchaseModal() {
                 ></path>
               </svg>
               <svg
+                className={`absolute transition-[opacity,transform] duration-200 ${
+                  USDTCopied ? "opacity-0 scale-50" : ""
+                }`}
                 height="16"
                 strokeLinejoin="round"
                 viewBox="0 0 16 16"
                 width="16"
-                className={`absolute transition-[opacity,transform] duration-200 ${
-                  USDTCopied ? "opacity-0 scale-50" : ""
-                }`}
               >
                 <path
                   fillRule="evenodd"
@@ -236,17 +236,17 @@ export default function PurchaseModal() {
               0xe16da609d75c861291cbda458e85a3f696342776
             </pre>
             <button
+              className="cursor-pointer relative flex items-center px-3 h-full"
               onClick={handleBNBCopy}
-              className="relative flex items-center px-3 h-full"
             >
               <svg
+                className={`transition-[opacity,transform] duration-200 ${
+                  BNBCopied ? "" : "opacity-0 scale-50"
+                }`}
                 height="16"
                 strokeLinejoin="round"
                 viewBox="0 0 16 16"
                 width="16"
-                className={`transition-[opacity,transform] duration-200 ${
-                  BNBCopied ? "" : "opacity-0 scale-50"
-                }`}
               >
                 <path
                   fillRule="evenodd"
@@ -256,13 +256,13 @@ export default function PurchaseModal() {
                 ></path>
               </svg>
               <svg
+                className={`absolute transition-[opacity,transform] duration-200 ${
+                  BNBCopied ? "opacity-0 scale-50" : ""
+                }`}
                 height="16"
                 strokeLinejoin="round"
                 viewBox="0 0 16 16"
                 width="16"
-                className={`absolute transition-[opacity,transform] duration-200 ${
-                  BNBCopied ? "opacity-0 scale-50" : ""
-                }`}
               >
                 <path
                   fillRule="evenodd"
@@ -277,17 +277,17 @@ export default function PurchaseModal() {
         <div className="border-[#ebebeb] bg-[#fafafa] p-6 border-t">
           <label htmlFor="fullName">Full name</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.fullName
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
+            }`}
             type="text"
             id="fullName"
             name="fullName"
             value={data.fullName}
             placeholder="John Doe"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.fullName
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
-            }`}
           />
           <div
             className={`mb-6 ${
@@ -295,11 +295,11 @@ export default function PurchaseModal() {
             }`}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -314,17 +314,17 @@ export default function PurchaseModal() {
           </div>
           <label htmlFor="emailAddress">Email address</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.emailAddress
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
+            }`}
             type="text"
             id="emailAddress"
             name="emailAddress"
             value={data.emailAddress}
             placeholder="johndoe@outlook.com"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.emailAddress
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
-            }`}
           />
           <div
             className={`mb-6 ${
@@ -332,11 +332,11 @@ export default function PurchaseModal() {
             }`}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -353,17 +353,17 @@ export default function PurchaseModal() {
           </div>
           <label htmlFor="transactionID">Transaction ID</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.transactionID
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029]"
+            }`}
             type="text"
             id="transactionID"
             name="transactionID"
             value={data.transactionID}
             placeholder="0xabc123def4567890fedcba0987654321abcdef1234567890abcdefabcdef1234"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.transactionID
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029]"
-            }`}
           />
           <div
             className={
@@ -371,11 +371,11 @@ export default function PurchaseModal() {
             }
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -390,6 +390,7 @@ export default function PurchaseModal() {
           </div>
         </div>
         <div
+          className="bottom-0 sticky flex justify-between border-[#ebebeb] p-4 border-t"
           style={{
             backgroundColor: `hsl(0, 0%, ${100 - scrollPercent / 50}%)`,
             boxShadow: `rgba(0, 0, 0, ${Math.max(
@@ -397,22 +398,21 @@ export default function PurchaseModal() {
               0
             )}) 0px 4px 8px 0px`,
           }}
-          className="bottom-0 sticky flex justify-between border-[#ebebeb] p-4 border-t"
         >
           <button
-            onClick={() => setPurchaseModalOpen(false)}
             className="flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
+            onClick={() => setPurchaseModalOpen(false)}
           >
             Close
           </button>
           <button
-            disabled={submitting}
-            onClick={handleSubmit}
             className={`flex items-center gap-x-2 px-4 rounded-md h-10 font-medium transition-[background-color,color,box-shadow] duration-200 ${
               submitting
                 ? "bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] text-[#8f8f8f] cursor-not-allowed"
-                : "bg-[#171717] hover:bg-[#383838] shadow-[0px_0px_0px_1px_#00000000] text-white"
+                : "bg-[#171717] hover:bg-[#383838] shadow-[0px_0px_0px_1px_#00000000] text-white cursor-pointer"
             }`}
+            disabled={submitting}
+            onClick={handleSubmit}
           >
             <div
               className={`relative top-2 left-2 w-4 h-4 ${
@@ -425,12 +425,12 @@ export default function PurchaseModal() {
 
                 return (
                   <div
+                    className="top-[-3.9%] left-[-10%] absolute bg-[#666] rounded-md w-[24%] h-[8%] animate-spinner"
                     key={index}
                     style={{
                       animationDelay: `${delay}ms`,
                       transform: `rotate(${angle}deg) translateX(146%)`,
                     }}
-                    className="top-[-3.9%] left-[-10%] absolute bg-[#666] rounded-md w-[24%] h-[8%] animate-spinner"
                   ></div>
                 );
               })}
@@ -440,10 +440,10 @@ export default function PurchaseModal() {
         </div>
       </div>
       <div
-        ref={mobileModalRef}
         className={`-bottom-px z-40 fixed sm:hidden bg-white shadow-[0px_0px_0px_1px_#00000014,0px_1px_1px_0px_#00000005,0px_4px_8px_-4px_#0000000a,0px_16px_24px_-8px_#0000000f] rounded-t-lg w-full h-fit max-h-[min(520px,75%)] transition-transform duration-200 overflow-auto ${
           purchaseModalOpen ? "" : "translate-y-full"
         }`}
+        ref={mobileModalRef}
       >
         <div className="p-6">
           <h2 className="mb-6 font-semibold text-[#171717] text-2xl">
@@ -466,17 +466,17 @@ export default function PurchaseModal() {
               0xa1272120050a09814f93962ce3bfd20bf2653965
             </pre>
             <button
+              className="cursor-pointer relative flex items-center px-3 h-full"
               onClick={handleUSDTCopy}
-              className="relative flex items-center px-3 h-full"
             >
               <svg
+                className={`absolute transition-[opacity,transform] duration-200 ${
+                  USDTCopied ? "" : "opacity-0 scale-50"
+                }`}
                 height="16"
                 strokeLinejoin="round"
                 viewBox="0 0 16 16"
                 width="16"
-                className={`absolute transition-[opacity,transform] duration-200 ${
-                  USDTCopied ? "" : "opacity-0 scale-50"
-                }`}
               >
                 <path
                   fillRule="evenodd"
@@ -486,13 +486,13 @@ export default function PurchaseModal() {
                 ></path>
               </svg>
               <svg
+                className={`transition-[opacity,transform] duration-200 ${
+                  USDTCopied ? "opacity-0 scale-50" : ""
+                }`}
                 height="16"
                 strokeLinejoin="round"
                 viewBox="0 0 16 16"
                 width="16"
-                className={`transition-[opacity,transform] duration-200 ${
-                  USDTCopied ? "opacity-0 scale-50" : ""
-                }`}
               >
                 <path
                   fillRule="evenodd"
@@ -511,17 +511,17 @@ export default function PurchaseModal() {
               0xe16da609d75c861291cbda458e85a3f696342776
             </pre>
             <button
+              className="cursor-pointer relative flex justify-center items-center px-3 h-full"
               onClick={handleBNBCopy}
-              className="relative flex justify-center items-center px-3 h-full"
             >
               <svg
+                className={`absolute transition-[opacity,transform] duration-200 ${
+                  BNBCopied ? "" : "opacity-0 scale-50"
+                }`}
                 height="16"
                 strokeLinejoin="round"
                 viewBox="0 0 16 16"
                 width="16"
-                className={`absolute transition-[opacity,transform] duration-200 ${
-                  BNBCopied ? "" : "opacity-0 scale-50"
-                }`}
               >
                 <path
                   fillRule="evenodd"
@@ -531,13 +531,13 @@ export default function PurchaseModal() {
                 ></path>
               </svg>
               <svg
+                className={`transition-[opacity,transform] duration-200 ${
+                  BNBCopied ? "opacity-0 scale-50" : ""
+                }`}
                 height="16"
                 strokeLinejoin="round"
                 viewBox="0 0 16 16"
                 width="16"
-                className={`transition-[opacity,transform] duration-200 ${
-                  BNBCopied ? "opacity-0 scale-50" : ""
-                }`}
               >
                 <path
                   fillRule="evenodd"
@@ -552,6 +552,11 @@ export default function PurchaseModal() {
         <div className="border-[#ebebeb] bg-[#fafafa] p-6 border-t">
           <label htmlFor="fullName">Full name</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.fullName
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
+            }`}
             type="text"
             id="fullName"
             name="fullName"
@@ -559,11 +564,6 @@ export default function PurchaseModal() {
             placeholder="John Doe"
             autoComplete="off"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.fullName
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
-            }`}
           />
           <div
             className={`mb-6 ${
@@ -571,11 +571,11 @@ export default function PurchaseModal() {
             }`}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -590,6 +590,11 @@ export default function PurchaseModal() {
           </div>
           <label htmlFor="emailAddress">Email address</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.emailAddress
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
+            }`}
             type="text"
             id="emailAddress"
             name="emailAddress"
@@ -597,11 +602,6 @@ export default function PurchaseModal() {
             placeholder="johndoe@outlook.com"
             autoComplete="off"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.emailAddress
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029] mb-6"
-            }`}
           />
           <div
             className={`mb-6 ${
@@ -609,11 +609,11 @@ export default function PurchaseModal() {
             }`}
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -630,17 +630,17 @@ export default function PurchaseModal() {
           </div>
           <label htmlFor="transactionID">Transaction ID</label>
           <input
+            className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
+              error.transactionID
+                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
+                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029]"
+            }`}
             type="text"
             id="transactionID"
             name="transactionID"
             value={data.transactionID}
             placeholder="0xabc123def4567890fedcba0987654321abcdef1234567890abcdefabcdef1234"
             onChange={handleChange}
-            className={`block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
-              error.transactionID
-                ? "shadow-[0px_0px_0px_1px_#cb2a2f,0px_0px_0px_4px_#ffe6e6] mb-4"
-                : "shadow-[0px_0px_0px_1px_#00000014] focus:shadow-[0px_0px_0px_1px_#00000056,0px_0px_0px_4px_#00000029]"
-            }`}
           />
           <div
             className={
@@ -648,11 +648,11 @@ export default function PurchaseModal() {
             }
           >
             <svg
+              className="text-[#cb2a2f]"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-[#cb2a2f]"
             >
               <path
                 fillRule="evenodd"
@@ -667,6 +667,7 @@ export default function PurchaseModal() {
           </div>
         </div>
         <div
+          className="bottom-0 sticky flex justify-between border-[#ebebeb] p-4 border-t"
           style={{
             backgroundColor: `hsl(0, 0%, ${100 - scrollPercent / 50}%)`,
             boxShadow: `rgba(0, 0, 0, ${Math.max(
@@ -674,22 +675,21 @@ export default function PurchaseModal() {
               0
             )}) 0px 4px 8px 0px`,
           }}
-          className="bottom-0 sticky flex justify-between border-[#ebebeb] p-4 border-t"
         >
           <button
+            className="cursor-pointer flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
             onClick={() => setPurchaseModalOpen(false)}
-            className="flex items-center bg-white hover:bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#00000014] px-4 rounded-md h-10 font-medium text-[#171717] transition-colors duration-200"
           >
             Close
           </button>
           <button
-            disabled={submitting}
-            onClick={handleSubmit}
             className={`flex items-center gap-x-2 px-4 rounded-md h-10 font-medium transition-[background-color,color,box-shadow] duration-200 ${
               submitting
                 ? "bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] text-[#8f8f8f] cursor-not-allowed"
-                : "bg-[#171717] hover:bg-[#383838] shadow-[0px_0px_0px_1px_#00000000] text-white"
+                : "bg-[#171717] hover:bg-[#383838] shadow-[0px_0px_0px_1px_#00000000] text-white cursor-pointer"
             }`}
+            disabled={submitting}
+            onClick={handleSubmit}
           >
             <div
               className={`relative top-2 left-2 w-4 h-4 ${
@@ -702,12 +702,12 @@ export default function PurchaseModal() {
 
                 return (
                   <div
+                    className="top-[-3.9%] left-[-10%] absolute bg-[#666] rounded-md w-[24%] h-[8%] animate-spinner"
                     key={index}
                     style={{
                       animationDelay: `${delay}ms`,
                       transform: `rotate(${angle}deg) translateX(146%)`,
                     }}
-                    className="top-[-3.9%] left-[-10%] absolute bg-[#666] rounded-md w-[24%] h-[8%] animate-spinner"
                   ></div>
                 );
               })}
@@ -731,13 +731,13 @@ export default function PurchaseModal() {
           <p className="text-white font-medium">
             Thank You! You'll receive your data soon.
           </p>
-          <button className="cursor-pointer h-full w-8 flex justify-center items-center rounded-md hover:bg-[#005bc4]">
+          <button className="cursor-pointer h-full w-8 flex justify-center items-center rounded-md hover:bg-[#0067dc] transition-colors duration-200">
             <svg
+              className="text-white"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="text-white"
               onClick={() => setPurchaseToastVisible(false)}
             >
               <path

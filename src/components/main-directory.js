@@ -156,8 +156,8 @@ export default function MainDirectory() {
               Global Websites Directory
             </h1>
             <time
-              dateTime={today.toISOString().split("T")[0]}
               className="hidden lg:inline text-[#171717]"
+              dateTime={today.toISOString().split("T")[0]}
             >
               {formattedDate}
             </time>
@@ -173,8 +173,8 @@ export default function MainDirectory() {
             <div className="animate-skeleton bg-[length:400%_100%] bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] mb-4 lg:mb-0 h-5 rounded-md w-full"></div>
           )}
           <time
-            dateTime={today.toISOString().split("T")[0]}
             className="inline lg:hidden text-[#171717]"
+            dateTime={today.toISOString().split("T")[0]}
           >
             {formattedDate}
           </time>
@@ -183,8 +183,8 @@ export default function MainDirectory() {
       <div className="max-w-screen-lg mx-auto px-4 py-6">
         <div className="sm:relative">
           <button
+            className="cursor-pointer bg-white duration-200 flex h-10 items-center justify-between px-4 rounded-md shadow-[0px_0px_0px_1px_#00000014] text-[#171717] transition-colors w-full hover:bg-[#f2f2f2]"
             onClick={() => setFilterDropdownOpen((prev) => !prev)}
-            className="bg-white duration-200 flex h-10 items-center justify-between px-4 rounded-md shadow-[0px_0px_0px_1px_#00000014] text-[#171717] transition-colors w-full hover:bg-[#f2f2f2]"
           >
             <span className="hidden font-medium text-left sm:inline">
               {filter.length !== 0
@@ -211,11 +211,11 @@ export default function MainDirectory() {
               {filter.length > 2 ? `... +${filter.length - 2}` : ""}
             </span>
             <svg
+              className="relative top-px"
               height="16"
               strokeLinejoin="round"
               viewBox="0 0 16 16"
               width="16"
-              className="relative top-px"
             >
               <path
                 fillRule="evenodd"
@@ -234,15 +234,16 @@ export default function MainDirectory() {
               {hostingProviders.length
                 ? hostingProviders.map((item, index) => (
                     <button
+                      className="cursor-pointer duration-200 flex h-10 items-center justify-between px-2 rounded-md text-left text-[#171717] transition-colors w-full hover:bg-[#0000000D]"
                       key={index}
                       onClick={() => {
                         handleFilterUpdate(item.name);
                       }}
-                      className="duration-200 flex h-10 items-center justify-between px-2 rounded-md text-left text-[#171717] transition-colors w-full hover:bg-[#0000000D]"
                     >
                       <span>{item.name}</span>
                       {filter.includes(item.name) ? (
                         <svg
+                          className="h-[18px] w-[18px]"
                           fill="none"
                           height="24"
                           shapeRendering="geometricPrecision"
@@ -252,7 +253,6 @@ export default function MainDirectory() {
                           strokeWidth="1.5"
                           viewBox="0 0 24 24"
                           width="24"
-                          className="h-[18px] w-[18px]"
                         >
                           <path d="M20 6L9 17l-5-5"></path>
                         </svg>
@@ -262,17 +262,17 @@ export default function MainDirectory() {
                     </button>
                   ))
                 : Array.from({ length: 5 }).map((_, index) => (
-                    <div key={index} className="flex h-10 items-center px-2">
+                    <div className="flex h-10 items-center px-2" key={index}>
                       <div className="animate-skeleton bg-[length:400%_100%] bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] h-5 rounded-md w-28"></div>
                     </div>
                   ))}
             </div>
           </div>
           <div
-            onClick={() => setFilterDropdownOpen(false)}
             className={`fixed h-full top-0 w-full z-30 bg-[#0006] sm:hidden transition-opacity duration-200 ${
               filterDropdownOpen ? "" : "opacity-0 pointer-events-none"
             }`}
+            onClick={() => setFilterDropdownOpen(false)}
           ></div>
           <div
             className={`bottom-0 fixed h-fit max-h-[216px] w-full z-40 bg-white overflow-auto p-2 rounded-t-lg shadow-[0px_0px_0px_1px_#00000014,0px_1px_1px_0px_#00000005,0px_4px_8px_-4px_#0000000a,0px_16px_24px_-8px_#0000000f] sm:hidden transition-transform duration-200 ${
@@ -282,15 +282,16 @@ export default function MainDirectory() {
             {hostingProviders.length
               ? hostingProviders.map((item, index) => (
                   <button
+                    className="cursor-pointer duration-200 flex h-10 items-center justify-between px-2 rounded-md text-left text-[#171717] transition-colors w-full hover:bg-[#0000000D]"
                     key={index}
                     onClick={() => {
                       handleFilterUpdate(item.name);
                     }}
-                    className="duration-200 flex h-10 items-center justify-between px-2 rounded-md text-left text-[#171717] transition-colors w-full hover:bg-[#0000000D]"
                   >
                     <span>{item.name}</span>
                     {filter.includes(item.name) ? (
                       <svg
+                        className="h-[18px] w-[18px]"
                         fill="none"
                         height="24"
                         shapeRendering="geometricPrecision"
@@ -300,7 +301,6 @@ export default function MainDirectory() {
                         strokeWidth="1.5"
                         viewBox="0 0 24 24"
                         width="24"
-                        className="h-[18px] w-[18px]"
                       >
                         <path d="M20 6L9 17l-5-5"></path>
                       </svg>
@@ -325,17 +325,20 @@ export default function MainDirectory() {
                     <th className="h-10 px-4 text-left">
                       <div className="flex gap-x-2 items-center">
                         <span className="font-medium">Domain Name</span>
-                        <button onClick={() => handleSortUpdate("domainName")}>
+                        <button
+                          className="cursor-pointer"
+                          onClick={() => handleSortUpdate("domainName")}
+                        >
                           <svg
-                            height="16"
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width="16"
                             className={`h-2 w-4 ${
                               sort === "domainName" && order === "asc"
                                 ? ""
                                 : "opacity-50"
                             }`}
+                            height="16"
+                            strokeLinejoin="round"
+                            viewBox="0 0 16 16"
+                            width="16"
                           >
                             <path
                               clipRule="evenodd"
@@ -345,15 +348,15 @@ export default function MainDirectory() {
                             ></path>
                           </svg>
                           <svg
-                            height="16"
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width="16"
                             className={`h-2 w-4 ${
                               sort === "domainName" && order === "desc"
                                 ? ""
                                 : "opacity-50"
                             }`}
+                            height="16"
+                            strokeLinejoin="round"
+                            viewBox="0 0 16 16"
+                            width="16"
                           >
                             <path
                               clipRule="evenodd"
@@ -368,17 +371,20 @@ export default function MainDirectory() {
                     <th className="h-10 px-4 text-left">
                       <div className="flex gap-x-2 items-center">
                         <span className="font-medium">IP Address</span>
-                        <button onClick={() => handleSortUpdate("IPAddress")}>
+                        <button
+                          className="cursor-pointer"
+                          onClick={() => handleSortUpdate("IPAddress")}
+                        >
                           <svg
-                            height="16"
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width="16"
                             className={`h-2 w-4 ${
                               sort === "IPAddress" && order === "asc"
                                 ? ""
                                 : "opacity-50"
                             }`}
+                            height="16"
+                            strokeLinejoin="round"
+                            viewBox="0 0 16 16"
+                            width="16"
                           >
                             <path
                               clipRule="evenodd"
@@ -388,15 +394,15 @@ export default function MainDirectory() {
                             ></path>
                           </svg>
                           <svg
-                            height="16"
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width="16"
                             className={`h-2 w-4 ${
                               sort === "IPAddress" && order === "desc"
                                 ? ""
                                 : "opacity-50"
                             }`}
+                            height="16"
+                            strokeLinejoin="round"
+                            viewBox="0 0 16 16"
+                            width="16"
                           >
                             <path
                               clipRule="evenodd"
@@ -412,18 +418,19 @@ export default function MainDirectory() {
                       <div className="flex gap-x-2 items-center">
                         <span className="font-medium">Hosting Provider</span>
                         <button
+                          className="cursor-pointer"
                           onClick={() => handleSortUpdate("hostingProvider")}
                         >
                           <svg
-                            height="16"
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width="16"
                             className={`h-2 w-4 ${
                               sort === "hostingProvider" && order === "asc"
                                 ? ""
                                 : "opacity-50"
                             }`}
+                            height="16"
+                            strokeLinejoin="round"
+                            viewBox="0 0 16 16"
+                            width="16"
                           >
                             <path
                               clipRule="evenodd"
@@ -433,15 +440,15 @@ export default function MainDirectory() {
                             ></path>
                           </svg>
                           <svg
-                            height="16"
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width="16"
                             className={`h-2 w-4 ${
                               sort === "hostingProvider" && order === "desc"
                                 ? ""
                                 : "opacity-50"
                             }`}
+                            height="16"
+                            strokeLinejoin="round"
+                            viewBox="0 0 16 16"
+                            width="16"
                           >
                             <path
                               clipRule="evenodd"
@@ -457,18 +464,19 @@ export default function MainDirectory() {
                       <div className="flex gap-x-2 items-center">
                         <span className="font-medium">Global Ranking</span>
                         <button
+                          className="cursor-pointer"
                           onClick={() => handleSortUpdate("globalRanking")}
                         >
                           <svg
-                            height="16"
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width="16"
                             className={`h-2 w-4 ${
                               sort === "globalRanking" && order === "asc"
                                 ? ""
                                 : "opacity-50"
                             }`}
+                            height="16"
+                            strokeLinejoin="round"
+                            viewBox="0 0 16 16"
+                            width="16"
                           >
                             <path
                               clipRule="evenodd"
@@ -478,15 +486,15 @@ export default function MainDirectory() {
                             ></path>
                           </svg>
                           <svg
-                            height="16"
-                            strokeLinejoin="round"
-                            viewBox="0 0 16 16"
-                            width="16"
                             className={`h-2 w-4 ${
                               sort === "globalRanking" && order === "desc"
                                 ? ""
                                 : "opacity-50"
                             }`}
+                            height="16"
+                            strokeLinejoin="round"
+                            viewBox="0 0 16 16"
+                            width="16"
                           >
                             <path
                               clipRule="evenodd"
@@ -503,20 +511,20 @@ export default function MainDirectory() {
                 <tbody className="bg-white">
                   {websites.length
                     ? websites.map((item, index) => (
-                        <tr key={index} className="border-t border-[#ebebeb]">
+                        <tr className="border-t border-[#ebebeb]" key={index}>
                           <td className="h-10 px-4 text-left">
                             <Link
+                              className="gap-x-0.5 hover:text-[#171717] items-center transition-colors duration-200 flex"
                               href={`https://www.${item.domainName}`}
                               target="_blank"
-                              className="gap-x-0.5 hover:text-[#171717] items-center transition-colors duration-200 flex"
                             >
                               <span>{item.domainName}</span>
                               <svg
+                                className="relative top-px"
                                 height="16"
                                 strokeLinejoin="round"
                                 viewBox="0 0 16 16"
                                 width="16"
-                                className="relative top-px"
                               >
                                 <path
                                   clipRule="evenodd"
@@ -534,18 +542,18 @@ export default function MainDirectory() {
                           </td>
                           <td className="h-10 px-4 text-left">
                             <Link
+                              className="gap-x-0.5 hover:text-[#171717] items-center transition-colors duration-200 flex"
                               href={`/providers/${toSlug(
                                 item.hostingProvider
                               )}`}
-                              className="gap-x-0.5 hover:text-[#171717] items-center transition-colors duration-200 flex"
                             >
                               <span>{item.hostingProvider}</span>
                               <svg
+                                className="relative top-px"
                                 height="16"
                                 strokeLinejoin="round"
                                 viewBox="0 0 16 16"
                                 width="16"
-                                className="relative top-px"
                               >
                                 <path
                                   clipRule="evenodd"
@@ -564,7 +572,7 @@ export default function MainDirectory() {
                         </tr>
                       ))
                     : Array.from({ length: 50 }).map((_, index) => (
-                        <tr key={index} className="border-t border-[#ebebeb]">
+                        <tr className="border-t border-[#ebebeb]" key={index}>
                           <td className="h-10 px-4 text-left">
                             <div className="items-center flex">
                               <div className="animate-skeleton bg-[length:400%_100%] rounded-md w-28 h-5 bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)]"></div>
@@ -600,18 +608,18 @@ export default function MainDirectory() {
               )}
               <div className="flex gap-x-2">
                 <button
+                  className={`flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6 ${
+                    page <= 1 ? "cursor-not-allowed" : "cursor-pointer"
+                  }`}
                   disabled={page <= 1 ? true : false}
                   onClick={() => handlePageUpdate("prev")}
-                  className={`flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6 ${
-                    page <= 1 ? "cursor-not-allowed" : ""
-                  }`}
                 >
                   <svg
+                    className="h-2.5 text-[#8f8f8f]"
                     height="16"
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
                     width="16"
-                    className="h-2.5 text-[#8f8f8f]"
                   >
                     <path
                       fillRule="evenodd"
@@ -622,24 +630,24 @@ export default function MainDirectory() {
                   </svg>
                 </button>
                 <button
-                  disabled={
-                    pagesCount ? (page >= pagesCount ? true : false) : true
-                  }
-                  onClick={() => handlePageUpdate("next")}
                   className={`flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6 ${
                     pagesCount
                       ? page >= pagesCount
                         ? "cursor-not-allowed"
-                        : ""
+                        : "cursor-pointer"
                       : "cursor-not-allowed"
                   }`}
+                  disabled={
+                    pagesCount ? (page >= pagesCount ? true : false) : true
+                  }
+                  onClick={() => handlePageUpdate("next")}
                 >
                   <svg
+                    className="h-2.5 text-[#8f8f8f]"
                     height="16"
                     strokeLinejoin="round"
                     viewBox="0 0 16 16"
                     width="16"
-                    className="h-2.5 text-[#8f8f8f]"
                   >
                     <path
                       fillRule="evenodd"

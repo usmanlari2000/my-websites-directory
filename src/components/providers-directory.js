@@ -91,8 +91,8 @@ export default function ProvidersDirectory() {
               Hosting Providers Directory
             </h1>
             <time
-              dateTime={today.toISOString().split("T")[0]}
               className="lg:inline hidden text-[#171717]"
+              dateTime={today.toISOString().split("T")[0]}
             >
               {formattedDate}
             </time>
@@ -108,8 +108,8 @@ export default function ProvidersDirectory() {
             <div className="bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] bg-[length:400%_100%] mb-4 lg:mb-0 rounded-md w-full h-5 animate-skeleton"></div>
           )}
           <time
-            dateTime={today.toISOString().split("T")[0]}
             className="inline lg:hidden text-[#171717]"
+            dateTime={today.toISOString().split("T")[0]}
           >
             {formattedDate}
           </time>
@@ -124,17 +124,20 @@ export default function ProvidersDirectory() {
                   <th className="px-4 h-10 text-left">
                     <div className="flex items-center gap-x-2">
                       <span className="font-medium">Hosting Provider</span>
-                      <button onClick={() => handleSortUpdate("name")}>
+                      <button
+                        className="cursor-pointer"
+                        onClick={() => handleSortUpdate("name")}
+                      >
                         <svg
-                          height="16"
-                          strokeLinejoin="round"
-                          viewBox="0 0 16 16"
-                          width="16"
                           className={`w-4 h-2 ${
                             sort === "name" && order === "asc"
                               ? ""
                               : "opacity-50"
                           }`}
+                          height="16"
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width="16"
                         >
                           <path
                             fillRule="evenodd"
@@ -144,15 +147,15 @@ export default function ProvidersDirectory() {
                           ></path>
                         </svg>
                         <svg
-                          height="16"
-                          strokeLinejoin="round"
-                          viewBox="0 0 16 16"
-                          width="16"
                           className={`w-4 h-2 ${
                             sort === "name" && order === "desc"
                               ? ""
                               : "opacity-50"
                           }`}
+                          height="16"
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width="16"
                         >
                           <path
                             fillRule="evenodd"
@@ -167,17 +170,20 @@ export default function ProvidersDirectory() {
                   <th className="px-4 h-10 text-left">
                     <div className="flex items-center gap-x-2">
                       <span className="font-medium">Known IPs Count</span>
-                      <button onClick={() => handleSortUpdate("knownIPsCount")}>
+                      <button
+                        className="cursor-pointer"
+                        onClick={() => handleSortUpdate("knownIPsCount")}
+                      >
                         <svg
-                          height="16"
-                          strokeLinejoin="round"
-                          viewBox="0 0 16 16"
-                          width="16"
                           className={`w-4 h-2 ${
                             sort === "knownIPsCount" && order === "asc"
                               ? ""
                               : "opacity-50"
                           }`}
+                          height="16"
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width="16"
                         >
                           <path
                             fillRule="evenodd"
@@ -187,15 +193,15 @@ export default function ProvidersDirectory() {
                           ></path>
                         </svg>
                         <svg
-                          height="16"
-                          strokeLinejoin="round"
-                          viewBox="0 0 16 16"
-                          width="16"
                           className={`w-4 h-2 ${
                             sort === "knownIPsCount" && order === "desc"
                               ? ""
                               : "opacity-50"
                           }`}
+                          height="16"
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width="16"
                         >
                           <path
                             fillRule="evenodd"
@@ -211,18 +217,19 @@ export default function ProvidersDirectory() {
                     <div className="flex items-center gap-x-2">
                       <span className="font-medium">Known Websites Count</span>
                       <button
+                        className="cursor-pointer"
                         onClick={() => handleSortUpdate("knownWebsitesCount")}
                       >
                         <svg
-                          height="16"
-                          strokeLinejoin="round"
-                          viewBox="0 0 16 16"
-                          width="16"
                           className={`w-4 h-2 ${
                             sort === "knownWebsitesCount" && order === "asc"
                               ? ""
                               : "opacity-50"
                           }`}
+                          height="16"
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width="16"
                         >
                           <path
                             fillRule="evenodd"
@@ -232,15 +239,15 @@ export default function ProvidersDirectory() {
                           ></path>
                         </svg>
                         <svg
-                          height="16"
-                          strokeLinejoin="round"
-                          viewBox="0 0 16 16"
-                          width="16"
                           className={`w-4 h-2 ${
                             sort === "knownWebsitesCount" && order === "desc"
                               ? ""
                               : "opacity-50"
                           }`}
+                          height="16"
+                          strokeLinejoin="round"
+                          viewBox="0 0 16 16"
+                          width="16"
                         >
                           <path
                             fillRule="evenodd"
@@ -257,19 +264,19 @@ export default function ProvidersDirectory() {
               <tbody className="bg-white">
                 {hostingProviders.length
                   ? hostingProviders.map((item, index) => (
-                      <tr key={index} className="border-[#ebebeb] border-t">
+                      <tr className="border-[#ebebeb] border-t" key={index}>
                         <td className="px-4 h-10 text-left">
                           <Link
-                            href={`/providers/${toSlug(item.name)}`}
                             className="flex items-center gap-x-0.5 hover:text-[#171717] transition-colors duration-200"
+                            href={`/providers/${toSlug(item.name)}`}
                           >
                             <span>{item.name}</span>
                             <svg
+                              className="relative top-px"
                               height="16"
                               strokeLinejoin="round"
                               viewBox="0 0 16 16"
                               width="16"
-                              className="relative top-px"
                             >
                               <path
                                 fillRule="evenodd"
@@ -293,7 +300,7 @@ export default function ProvidersDirectory() {
                       </tr>
                     ))
                   : Array.from({ length: 50 }).map((_, index) => (
-                      <tr key={index} className="border-[#ebebeb] border-t">
+                      <tr className="border-[#ebebeb] border-t" key={index}>
                         <td className="px-4 h-10 text-left">
                           <div className="flex items-center">
                             <div className="bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] bg-[length:400%_100%] rounded-md w-28 h-5 animate-skeleton"></div>
@@ -324,18 +331,18 @@ export default function ProvidersDirectory() {
             )}
             <div className="flex gap-x-2">
               <button
+                className={`flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6 ${
+                  page <= 1 ? "cursor-not-allowed" : "cursor-pointer"
+                }`}
                 disabled={page <= 1 ? true : false}
                 onClick={() => handlePageUpdate("prev")}
-                className={`flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6 ${
-                  page <= 1 ? "cursor-not-allowed" : ""
-                }`}
               >
                 <svg
+                  className="h-2.5 text-[#8f8f8f]"
                   height="16"
                   strokeLinejoin="round"
                   viewBox="0 0 16 16"
                   width="16"
-                  className="h-2.5 text-[#8f8f8f]"
                 >
                   <path
                     fillRule="evenodd"
@@ -346,24 +353,24 @@ export default function ProvidersDirectory() {
                 </svg>
               </button>
               <button
-                disabled={
-                  pagesCount ? (page >= pagesCount ? true : false) : true
-                }
-                onClick={() => handlePageUpdate("next")}
                 className={`flex justify-center items-center bg-[#f2f2f2] shadow-[0px_0px_0px_1px_#ebebeb] rounded-[4px] w-6 h-6 ${
                   pagesCount
                     ? page >= pagesCount
                       ? "cursor-not-allowed"
-                      : ""
+                      : "cursor-pointer"
                     : "cursor-not-allowed"
                 }`}
+                disabled={
+                  pagesCount ? (page >= pagesCount ? true : false) : true
+                }
+                onClick={() => handlePageUpdate("next")}
               >
                 <svg
+                  className="h-2.5 text-[#8f8f8f]"
                   height="16"
                   strokeLinejoin="round"
                   viewBox="0 0 16 16"
                   width="16"
-                  className="h-2.5 text-[#8f8f8f]"
                 >
                   <path
                     fillRule="evenodd"
@@ -380,4 +387,3 @@ export default function ProvidersDirectory() {
     </main>
   );
 }
-
