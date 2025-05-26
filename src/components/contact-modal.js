@@ -125,7 +125,7 @@ export default function ContactModal() {
   return (
     <>
       <div
-        className={`top-0 z-30 fixed bg-[#0006] sm:bg-white w-full h-full transition-opacity duration-200 ${
+        className={`top-0 left-0 z-30 fixed bg-[#0006] sm:bg-white w-full h-full transition-opacity duration-200 ${
           contactModalOpen ? "sm:opacity-80" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setContactModalOpen(false)}

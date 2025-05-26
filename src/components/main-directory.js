@@ -226,7 +226,7 @@ export default function MainDirectory() {
             </svg>
           </button>
           <div
-            className={`absolute h-fit pt-1.5 top-10 w-full z-10 ${
+            className={`absolute h-fit pt-1.5 top-10 left-0 w-full z-10 ${
               filterDropdownOpen ? "hidden sm:block" : "hidden"
             }`}
           >
@@ -269,13 +269,13 @@ export default function MainDirectory() {
             </div>
           </div>
           <div
-            className={`fixed h-full top-0 w-full z-30 bg-[#0006] sm:hidden transition-opacity duration-200 ${
+            className={`fixed h-full top-0 left-0 w-full z-30 bg-[#0006] sm:hidden transition-opacity duration-200 ${
               filterDropdownOpen ? "" : "opacity-0 pointer-events-none"
             }`}
             onClick={() => setFilterDropdownOpen(false)}
           ></div>
           <div
-            className={`bottom-0 fixed h-fit max-h-[216px] w-full z-40 bg-white overflow-auto p-2 rounded-t-lg shadow-[0px_0px_0px_1px_#00000014,0px_1px_1px_0px_#00000005,0px_4px_8px_-4px_#0000000a,0px_16px_24px_-8px_#0000000f] sm:hidden transition-transform duration-200 ${
+            className={`bottom-0 left-0 fixed h-fit max-h-[216px] w-full z-40 bg-white overflow-auto p-2 rounded-t-lg shadow-[0px_0px_0px_1px_#00000014,0px_1px_1px_0px_#00000005,0px_4px_8px_-4px_#0000000a,0px_16px_24px_-8px_#0000000f] sm:hidden transition-transform duration-200 ${
               filterDropdownOpen ? "" : "translate-y-full"
             }`}
           >
