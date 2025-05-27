@@ -130,8 +130,11 @@ export default function OtherDirectory({ hostingProvider }) {
             <p className="mb-4 lg:mb-0">
               This directory lists {recordsCount.toLocaleString()}{" "}
               {hostingProvider.name} hosted websites from around the world,
-              along with their IP addresses, and global rankings. The data is
-              regularly updated to maintain accuracy.
+              along with their IP addresses, hosting providers, and global
+              rankings. You can sort the list by domain name, IP address,
+              hosting provider, or global ranking in either ascending or
+              descending order. The data is regularly updated to ensure
+              accuracy.
             </p>
           ) : (
             <div className="bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] bg-[length:400%_100%] mb-4 lg:mb-0 rounded-md w-full h-5 animate-skeleton"></div>

@@ -166,8 +166,11 @@ export default function MainDirectory() {
             <p className="mb-4 lg:mb-0">
               This directory lists {recordsCount.toLocaleString()} websites from
               around the world, along with their IP addresses, hosting
-              providers, and global rankings. The data is regularly updated to
-              maintain accuracy.
+              providers, and global rankings. You can sort the list by domain
+              name, IP address, hosting provider, or global ranking in either
+              ascending or descending order. You can also filter the results by
+              hosting provider. The data is regularly updated to ensure
+              accuracy.
             </p>
           ) : (
             <div className="animate-skeleton bg-[length:400%_100%] bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] mb-4 lg:mb-0 h-5 rounded-md w-full"></div>

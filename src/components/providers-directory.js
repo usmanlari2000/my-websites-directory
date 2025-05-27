@@ -101,8 +101,10 @@ export default function ProvidersDirectory() {
             <p className="mb-4 lg:mb-0">
               This directory lists {recordsCount.toLocaleString()} hosting
               providers from around the world, along with their known IPs count,
-              and known websites count. The data is regularly updated to
-              maintain accuracy.
+              and known websites count. You can sort the list by hosting
+              provider, known IPs count, or known websites count in either
+              ascending or descending order. The data is regularly updated to
+              ensure accuracy.
             </p>
           ) : (
             <div className="bg-[linear-gradient(270deg,#fafafa,#eaeaea,#eaeaea,#fafafa)] bg-[length:400%_100%] mb-4 lg:mb-0 rounded-md w-full h-5 animate-skeleton"></div>
