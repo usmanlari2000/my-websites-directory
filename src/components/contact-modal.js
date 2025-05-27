@@ -11,7 +11,7 @@ export default function ContactModal() {
       const { scrollTop, scrollHeight, clientHeight } = ref.current;
       const totalScrollable = scrollHeight - clientHeight;
       const scrollProgress = (scrollTop / totalScrollable) * 100;
-
+      
       setScrollPercent(Math.min(Math.max(scrollProgress, 0), 100));
     }
   };
