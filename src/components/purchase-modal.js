@@ -183,7 +183,7 @@ export default function PurchaseModal() {
             and share the transaction ID with us. We will send you all the
             website data within one day.
           </p>
-          <span className="text-[#7d7d7d]">USDT address</span>
+          <span className="text-[#7d7d7d]">USDT Address</span>
           <div className="flex justify-between gap-x-2 border-[#00000014] mt-2 mb-6 pl-3 border rounded-md h-10">
             <pre
               className={`flex items-center h-full text-[13px] overflow-auto scrollbar-hide ${geistMono.className}`}
@@ -228,7 +228,7 @@ export default function PurchaseModal() {
               </svg>
             </button>
           </div>
-          <span className="text-[#7d7d7d]">BNB address</span>
+          <span className="text-[#7d7d7d]">BNB Address</span>
           <div className="flex justify-between gap-x-2 border-[#00000014] mt-2 pl-3 border rounded-md h-10">
             <pre
               className={`flex items-center h-full text-[13px] overflow-auto scrollbar-hide ${geistMono.className}`}
@@ -275,7 +275,7 @@ export default function PurchaseModal() {
           </div>
         </div>
         <div className="border-[#ebebeb] bg-[#fafafa] p-6 border-t">
-          <label htmlFor="fullName">Full name</label>
+          <label htmlFor="fullName">Full Name</label>
           <input
             className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
               error.fullName
@@ -312,7 +312,7 @@ export default function PurchaseModal() {
               The full name is required
             </span>
           </div>
-          <label htmlFor="emailAddress">Email address</label>
+          <label htmlFor="emailAddress">Email Address</label>
           <input
             className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
               error.emailAddress
@@ -458,7 +458,7 @@ export default function PurchaseModal() {
             and share the transaction ID with us. We will send you all the
             website data within one day.
           </p>
-          <span className="text-[#7d7d7d]">USDT address</span>
+          <span className="text-[#7d7d7d]">USDT Address</span>
           <div className="flex justify-between gap-x-2 border-[#00000014] mt-2 mb-6 pl-3 border rounded-md h-10">
             <pre
               className={`flex items-center h-full text-[13px] overflow-auto scrollbar-hide ${geistMono.className}`}
@@ -503,7 +503,7 @@ export default function PurchaseModal() {
               </svg>
             </button>
           </div>
-          <span className="text-[#7d7d7d]">BNB address</span>
+          <span className="text-[#7d7d7d]">BNB Address</span>
           <div className="flex justify-between gap-x-2 border-[#00000014] mt-2 pl-3 border rounded-md h-10">
             <pre
               className={`flex items-center h-full text-[13px] overflow-auto scrollbar-hide ${geistMono.className}`}
@@ -550,7 +550,7 @@ export default function PurchaseModal() {
           </div>
         </div>
         <div className="border-[#ebebeb] p-6 bg-[#fafafa] border-t">
-          <label htmlFor="fullName">Full name</label>
+          <label htmlFor="fullName">Full Name</label>
           <input
             className={`bg-white block mt-2 px-3 rounded-md w-full h-10 text-[#171717] focus:outline-0 ${
               error.fullName
@@ -588,7 +588,7 @@ export default function PurchaseModal() {
               The full name is required
             </span>
           </div>
-          <label htmlFor="emailAddress">Email address</label>
+          <label htmlFor="emailAddress">Email Address</label>
           <input
             className={`bg-white block mt-2 px-3 rounded-md h-10 w-full text-[#171717] focus:outline-0 ${
               error.emailAddress
