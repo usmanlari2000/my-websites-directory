@@ -108,6 +108,7 @@ export default function PurchaseModal() {
       );
 
       setUSDTCopied(true);
+      
       setTimeout(() => setUSDTCopied(false), 1000);
     } catch {
       console.log("Failed to copy");
