@@ -27,7 +27,7 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
             >
               <Image
-                className="h-5 w-5 relative top-px"
+                className="h-5 w-5"
                 src="/logo.png"
                 alt="logo"
                 width={682}
