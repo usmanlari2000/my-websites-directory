@@ -11,7 +11,7 @@ export default function ContactModal() {
       const { scrollTop, scrollHeight, clientHeight } = ref.current;
       const totalScrollable = scrollHeight - clientHeight;
       const scrollProgress = (scrollTop / totalScrollable) * 100;
-      
+
       setScrollPercent(Math.min(Math.max(scrollProgress, 0), 100));
     }
   };
@@ -86,12 +86,22 @@ export default function ContactModal() {
 
       setData({ fullName: "", emailAddress: "", message: "" });
       setSubmitting(false);
-      setContactModalOpen(false);
       setContactToastVisible(true);
+      setContactModalOpen(false);
     } catch {
       console.log("Failed to submit");
     }
   };
+
+  useEffect(() => {
+    if (contactToastVisible) {
+      const timer = setTimeout(() => {
+        setContactToastVisible(false);
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [contactToastVisible]);
 
   const desktopModalRef = useRef();
   const mobileModalRef = useRef();
@@ -111,16 +121,6 @@ export default function ContactModal() {
       mobileModal?.removeEventListener("scroll", mobileScrollHandler);
     };
   }, []);
-
-  useEffect(() => {
-    if (contactToastVisible) {
-      const timer = setTimeout(() => {
-        setContactToastVisible(false);
-      }, 4000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [contactToastVisible]);
 
   return (
     <>

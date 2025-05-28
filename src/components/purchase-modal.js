@@ -99,7 +99,6 @@ export default function PurchaseModal() {
   };
 
   const [USDTCopied, setUSDTCopied] = useState(false);
-  const [BNBCopied, setBNBCopied] = useState(false);
 
   const handleUSDTCopy = async () => {
     try {
@@ -108,12 +107,14 @@ export default function PurchaseModal() {
       );
 
       setUSDTCopied(true);
-      
+
       setTimeout(() => setUSDTCopied(false), 1000);
     } catch {
       console.log("Failed to copy");
     }
   };
+
+  const [BNBCopied, setBNBCopied] = useState(false);
 
   const handleBNBCopy = async () => {
     try {

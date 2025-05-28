@@ -50,9 +50,7 @@ export default function OtherDirectory({ hostingProvider }) {
     router.push(`?${params.toString()}`);
   };
 
-  const [websites, setWebsites] = useState([]);
   const [recordsCount, setRecordsCount] = useState(0);
-  const [pagesCount, setPagesCount] = useState(0);
 
   useEffect(() => {
     const handleFetch = async () => {
@@ -76,6 +74,9 @@ export default function OtherDirectory({ hostingProvider }) {
 
     handleFetch();
   }, []);
+
+  const [websites, setWebsites] = useState([]);
+  const [pagesCount, setPagesCount] = useState(0);
 
   useEffect(() => {
     setWebsites([]);

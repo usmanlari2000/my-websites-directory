@@ -8,6 +8,7 @@ import Header from "@/components/header";
 import ContactModal from "@/components/contact-modal";
 import PurchaseModal from "@/components/purchase-modal";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Layout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,6 +45,7 @@ export default function Layout({ children }) {
           {children}
           <Footer />
         </Context.Provider>
+        <Analytics />
       </body>
     </html>
   );

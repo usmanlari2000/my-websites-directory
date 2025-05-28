@@ -87,8 +87,6 @@ export default function MainDirectory() {
 
   const [hostingProviders, setHostingProviders] = useState([]);
   const [recordsCount, setRecordsCount] = useState(0);
-  const [websites, setWebsites] = useState([]);
-  const [pagesCount, setPagesCount] = useState(0);
 
   useEffect(() => {
     const handleFetch = async () => {
@@ -115,6 +113,9 @@ export default function MainDirectory() {
 
     handleFetch();
   }, []);
+
+  const [websites, setWebsites] = useState([]);
+  const [pagesCount, setPagesCount] = useState(0);
 
   useEffect(() => {
     setWebsites([]);
