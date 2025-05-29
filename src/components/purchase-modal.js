@@ -91,8 +91,8 @@ export default function PurchaseModal() {
         transactionID: "",
       });
       setSubmitting(false);
-      setPurchaseModalOpen(false);
       setPurchaseToastVisible(true);
+      setPurchaseModalOpen(false);
     } catch {
       console.log("Failed to submit");
     }
