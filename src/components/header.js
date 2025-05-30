@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import { useContext } from "react";
 import { Context } from "@/app/context";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Header() {
   const pathname = usePathname();
